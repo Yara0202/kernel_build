@@ -14,7 +14,7 @@ task:
   timeout_in: 60m
   container:
     image: stupidkidaf/kernel_docker:v1
-    cpu: 4
+    cpu: 8
     memory: 16G
   env_script:
     - env
