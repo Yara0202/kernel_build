@@ -41,7 +41,7 @@ push_message "<b>Build bot is running.</b>
 <b>Date:</b> <code>$DATE</code>"
 cd $HOME/$HOME_DIR
 
-for device in onclite surya; do
+for device in onclite olives surya; do
 
     mkdir -p $HOME/$HOME_DIR/chidori/$device
     
