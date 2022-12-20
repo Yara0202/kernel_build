@@ -54,6 +54,23 @@ push_message "<b>Start building kernel for <code>$device</code></b>
 <b>BuildDate:</b> <code>$BUILD_DATE</code>"
 	 cd $HOME/$HOME_DIR/chidori/$device 
 	 bash build.sh -n | tee $LOG
+		push_document "$HOME/$HOME_DIR/chidori/$device/$ZIPNAME-signed.zip" "
+		<b>CHIDORI KERNEL | $DEVICE</b>
+		New update available!
+		
+		<i>${DESC:-No description given...}</i>
+		
+		<b>Maintainer:</b> <code>$KBUILD_BUILD_USER</code>
+		<b>Builder:</b> $BUILDER
+		<b>Linux:</b> <code>$KERN_VER</code>
+		<b>Type:</b> <code>$TYPE</code>
+		<b>BuildDate:</b> <code>$BUILD_DATE</code>
+		<b>Filename:</b> <code>$ZIPNAME</code>
+		<b>md5 checksum :</b> <code>$(md5sum "$HOME/$HOME_DIR/chidori/$device/$ZIPNAME-signed.zip" | cut -d' ' -f1)</code>
+		#onclite #onc #kernel"
+
+		echo -e "$grn \n\n(i)          Send to telegram succesfully!\n $nocol"
+		
 push_document "$LOG" "
 <b>Kernel for <code>$device</code> compiled succesfully!</b>
 Total build time <b>$((SECONDS / 60))</b> minute(s) and <b>$((SECONDS % 60))</b> second(s) !
