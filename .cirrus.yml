@@ -11,7 +11,7 @@ env:
 task:
   name: Sync
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
-  timeout_in: 2m
+  timeout_in: 5m
   container:
     image: stupidkidaf/kernel_docker:v1
     cpu: 2
