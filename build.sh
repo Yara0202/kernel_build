@@ -49,32 +49,19 @@ for device in onclite surya; do
 	echo -e "$blue    \nStarting kernel compilation for $device\n $nocol"
 	LOG="build-$device.log"
 	BUILD_DATE=$(date '+%Y-%m-%d  %H:%M')
-	 # Push message if build started
-push_message "<b>Start building kernel for <code>$device</code></b>
-<b>BuildDate:</b> <code>$BUILD_DATE</code>"
-	 cd $HOME/$HOME_DIR/chidori/$device 
-	 bash build.sh -n | tee $LOG
-		push_document "$HOME/$HOME_DIR/chidori/$device/$ZIPNAME-signed.zip" "
-		<b>CHIDORI KERNEL | $DEVICE</b>
-		New update available!
+	# Push message if build started
+	push_message "<b>Start building kernel for <code>$device</code></b>
+	<b>BuildDate:</b> <code>$BUILD_DATE</code>"
+	cd $HOME/$HOME_DIR/chidori/$device 
+	bash build.sh -n | tee $LOG
 		
-		<i>${DESC:-No description given...}</i>
-		
-		<b>Maintainer:</b> <code>$KBUILD_BUILD_USER</code>
-		<b>Builder:</b> $BUILDER
-		<b>Linux:</b> <code>$KERN_VER</code>
-		<b>Type:</b> <code>$TYPE</code>
-		<b>BuildDate:</b> <code>$BUILD_DATE</code>
-		<b>Filename:</b> <code>$ZIPNAME</code>
-		<b>md5 checksum :</b> <code>$(md5sum "$HOME/$HOME_DIR/chidori/$device/$ZIPNAME-signed.zip" | cut -d' ' -f1)</code>
-		#onclite #onc #kernel"
-
-		echo -e "$grn \n\n(i)          Send to telegram succesfully!\n $nocol"
-		
-push_document "$LOG" "
-<b>Kernel for <code>$device</code> compiled succesfully!</b>
-Total build time <b>$((SECONDS / 60))</b> minute(s) and <b>$((SECONDS % 60))</b> second(s) !
-
-#logs #$device "
+	echo -e "$blue --- Uploading to SourceForge *.zip. $nocol"
+	scp $HOME/$HOME_DIR/chidori/$device/*-signed.zip melles1991@frs.sourceforge.net:/home/frs/project/exodusos/Chidori_Kernel/$device/nightly
+	
+	push_document "$LOG" "
+	<b>Kernel for <code>$device</code> compiled succesfully!</b>
+	Total build time <b>$((SECONDS / 60))</b> minute(s) and <b>$((SECONDS % 60))</b> second(s) !
+	
+	#logs #$device "
 )
 done
