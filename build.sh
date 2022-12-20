@@ -62,7 +62,6 @@ for device in onclite surya; do
 	push_document "$LOG" "
 	<b>Kernel for <code>$device</code> compiled succesfully!</b>
 	Total build time <b>$((SECONDS / 60))</b> minute(s) and <b>$((SECONDS % 60))</b> second(s) !
-	
 	#logs #$device "
 )
 done
