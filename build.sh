@@ -50,19 +50,19 @@ for device in onclite surya; do
 	LOG="build-$device.log"
 	BUILD_DATE=$(date '+%Y-%m-%d  %H:%M')
 	# Push message if build started
-	push_message "- Start building kernel for <b><code>$device</code></b>
+	push_message "- Start building kernel for <b><code>$device</code></b>"
 	<b>BuildDate:</b> <code>$BUILD_DATE</code>"
 	cd $HOME/$HOME_DIR/chidori/$device 
 	bash build.sh -n | tee $LOG
 		
 	echo -e "$blue --- Uploading to SourceForge *.zip. $nocol"
-	push_message "- Start uploading to SourceForge <i>*.zip</i> from <b><code>$device</code></b>
+	push_message "- Start uploading to SourceForge <i>*.zip</i> from <b><code>$device</code></b>"
 	scp $HOME/$HOME_DIR/chidori/$device/*-signed.zip melles1991@frs.sourceforge.net:/home/frs/project/exodusos/Chidori_Kernel/$device/nightly
 	
-push_document "$LOG" "
-<b>Kernel for <code>$device</code> compiled succesfully!</b>
-Total build time <b>$((SECONDS / 60))</b> minute(s) and <b>$((SECONDS % 60))</b> second(s) !
-
-#logs #$device "
+	push_document "$LOG" "
+	<b>Kernel for <code>$device</code> compiled succesfully!</b>
+	Total build time <b>$((SECONDS / 60))</b> minute(s) and <b>$((SECONDS % 60))</b> second(s) !
+	
+	#logs #$device "
 )
 done
