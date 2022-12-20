@@ -50,7 +50,7 @@ for device in onclite surya; do
 	LOG="build-$device.log"
 	BUILD_DATE=$(date '+%Y-%m-%d  %H:%M')
 	# Push message if build started
-	push_message "- Start building kernel for <b><code>$device</code></b>"
+	push_message "- Start building kernel for <b><code>$device</code></b>
 	<b>BuildDate:</b> <code>$BUILD_DATE</code>"
 	cd $HOME/$HOME_DIR/chidori/$device 
 	bash build.sh -n | tee $LOG
