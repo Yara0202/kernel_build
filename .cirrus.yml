@@ -12,11 +12,10 @@ task:
   name: Sync
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
   timeout_in: 2m
-    isolation:
-      container:
-        image: stupidkidaf/kernel_docker:v1
-        cpu: 2
-        memory: 4G
+  container:
+    image: stupidkidaf/kernel_docker:v1
+    cpu: 2
+    memory: 4G
   env_script:
     - env
   Sync_script:
@@ -28,10 +27,9 @@ task:
   depends_on:
     - Sync
   timeout_in: 4h
-    isolation:
-      container:
-        image: stupidkidaf/kernel_docker:v1
-        cpu: 24
-        memory: 120G
+  container:
+    image: stupidkidaf/kernel_docker:v1
+    cpu: 24
+    memory: 120G
   Build_script:
       - bash build.sh
