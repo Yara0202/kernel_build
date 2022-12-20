@@ -29,9 +29,12 @@ push_message() {
 
 push_message "<b>Build Chidori bot is running.</b>
 <b>Date:</b> <code>$DATE</code>"
+echo -e "$blue    \nSetup build environment.\n $nocol"
+push_message "- Setup build environment."
+
 cd $HOME && sudo apt-get install git -y && git clone https://github.com/CraftRom/scripts && cd scripts && sudo bash setup/android_build_env.sh
 echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
-push_message "Downloading manifest and initialized repo"
+push_message "- Downloading manifest and initialized repo."
 cd $HOME
 mkdir -p $HOME_DIR
 cd $HOME/$HOME_DIR
