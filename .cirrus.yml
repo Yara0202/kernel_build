@@ -12,9 +12,6 @@ task:
   name: Sync
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
   timeout_in: 2m
-  persistent_worker:
-    labels:
-      name: AX61-2
     isolation:
       container:
         image: stupidkidaf/kernel_docker:v1
@@ -31,9 +28,6 @@ task:
   depends_on:
     - Sync
   timeout_in: 4h
-  persistent_worker:
-    labels:
-      name: AX61-1
     isolation:
       container:
         image: stupidkidaf/kernel_docker:v1
