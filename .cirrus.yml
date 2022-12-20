@@ -20,16 +20,5 @@ task:
     - env
   Sync_script:
       - bash sync.sh
-    
-task:
-  name: chidori-build
-  only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
-  depends_on:
-    - chidori-sync
-  timeout_in: 6h
-  container:
-    image: stupidkidaf/kernel_docker:v1
-    cpu: 4
-    memory: 16G
   Build_script:
       - bash build.sh
