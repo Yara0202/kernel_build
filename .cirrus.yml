@@ -13,9 +13,9 @@ task:
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
   timeout_in: 60m
   container:
-    image: stupidkidaf/kernel_docker:v1
+    image: registry.gitlab.com/sushrut1101/docker:latest
     cpu: 8
-    memory: 16G
+    memory: 32G
   env_script:
     - env
   Sync_script:
@@ -28,7 +28,7 @@ task:
     - chidori-sync
   timeout_in: 6h
   container:
-    image: stupidkidaf/kernel_docker:v1
+    image: registry.gitlab.com/sushrut1101/docker:latest
     cpu: 24
     memory: 120G
   Build_script:
