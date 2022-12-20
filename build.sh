@@ -59,10 +59,10 @@ for device in onclite surya; do
 	push_message "- Start uploading to SourceForge <i>*.zip</i> from <b><code>$device</code></b>
 	scp $HOME/$HOME_DIR/chidori/$device/*-signed.zip melles1991@frs.sourceforge.net:/home/frs/project/exodusos/Chidori_Kernel/$device/nightly
 	
-	push_document "$LOG" " \
-	<b>Kernel for <code>$device</code> compiled succesfully!</b> \
-	Total build time <b>$((SECONDS / 60))</b> minute(s) and <b>$((SECONDS % 60))</b> second(s) ! \
-	\
-	#logs #$device "
+push_document "$LOG" "
+<b>Kernel for <code>$device</code> compiled succesfully!</b>
+Total build time <b>$((SECONDS / 60))</b> minute(s) and <b>$((SECONDS % 60))</b> second(s) !
+
+#logs #$device "
 )
 done
