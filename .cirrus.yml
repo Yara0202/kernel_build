@@ -11,10 +11,10 @@ env:
 task:
   name: chidori-sync
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
-  timeout_in: 1h
+  timeout_in: 60m
   container:
     image: stupidkidaf/kernel_docker:v1
-    cpu: 4
+    cpu: 8
     memory: 16G
   env_script:
     - env
