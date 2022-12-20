@@ -13,8 +13,8 @@ task:
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
   timeout_in: 60m
   container:
-    image: anasty17/mltb:latest
-    cpu: 8
+    image: stupidkidaf/kernel_docker:v1
+    cpu: 4
     memory: 32G
   env_script:
     - env
@@ -28,7 +28,7 @@ task:
     - chidori-sync
   timeout_in: 6h
   container:
-    image: anasty17/mltb:latest
+    image: stupidkidaf/kernel_docker:v1
     cpu: 24
     memory: 120G
   Build_script:
