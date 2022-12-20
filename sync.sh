@@ -35,5 +35,5 @@ push_message "Downloading manifest and initialized repo"
 cd $HOME
 mkdir -p $HOME_DIR
 cd $HOME/$HOME_DIR
-repo init -u https://github.com/CraftRom/kernel -b stable
+repo init -u https://github.com/CraftRom/kernel -b nightly
 repo sync --detach --current-branch --no-tags --force-remove-dirty --force-sync
