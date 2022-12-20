@@ -15,7 +15,7 @@ task:
   container:
     image: stupidkidaf/kernel_docker:v1
     cpu: 4
-    memory: 32G
+    memory: 16G
   env_script:
     - env
   Sync_script:
