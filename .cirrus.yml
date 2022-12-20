@@ -13,7 +13,7 @@ task:
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
   timeout_in: 60m
   container:
-    image: stupidkidaf/kernel_docker:v1
+    image: registry.gitlab.com/sushrut1101/docker:latest
     cpu: 4
     memory: 16G
   env_script:
