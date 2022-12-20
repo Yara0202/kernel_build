@@ -13,7 +13,7 @@ task:
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
   timeout_in: 60m
   container:
-    image: registry.gitlab.com/sushrut1101/docker:latest
+    image: apon77/aosp:cirrus
     cpu: 8
     memory: 32G
   env_script:
@@ -28,7 +28,7 @@ task:
     - chidori-sync
   timeout_in: 6h
   container:
-    image: registry.gitlab.com/sushrut1101/docker:latest
+    image: apon77/aosp:cirrus
     cpu: 24
     memory: 120G
   Build_script:
