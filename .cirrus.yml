@@ -14,8 +14,8 @@ task:
   timeout_in: 60m
   container:
     image: registry.gitlab.com/sushrut1101/docker:latest
-    cpu: 4
-    memory: 16G
+    cpu: 8
+    memory: 32G
   env_script:
     - env
   Sync_script:
