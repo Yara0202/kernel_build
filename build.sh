@@ -15,7 +15,7 @@ txtbld=$(tput bold)
 txtrst=$(tput sgr0) 
 
 DATE=$(date '+%Y-%m-%d  %H:%M')
-HOME_DIR="craftrom"
+HOME_DIR="HK"
 
 # Telegram setup
 push_message() {
@@ -43,7 +43,7 @@ cd $HOME/$HOME_DIR
 
 for device in X01AD; do
 
-    mkdir -p $HOME/$HOME_DIR/chidori/$device
+    mkdir -p $HOME/$HOME_DIR/HK/$device
     
 (
 	echo -e "$blue    \nStarting kernel compilation for $device\n $nocol"
