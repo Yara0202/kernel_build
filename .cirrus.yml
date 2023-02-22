@@ -9,8 +9,8 @@ env:
     CIRRUS_SHELL: bash
 
 task:
-  name: chidori-sync
-  only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
+  name: OrionX-sync
+  only_if: $CIRRUS_REPO_OWNER == 'Hiroki'
   timeout_in: 60m
   container:
     image: stupidkidaf/kernel_docker:v1
