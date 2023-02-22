@@ -20,14 +20,14 @@ HOME_DIR="craftrom"
 # Telegram setup
 push_message() {
     curl -s -X POST \
-         https://api.telegram.org/bot5579959772:AAHJ1cvfipl05kxYhNQBvLy7b60vGmeQSRE/sendMessage \
-        -d chat_id="-1001695676652" \
+         https://api.telegram.org/bot5656648601:AAH_4CjtbXbl9NRa8HkCLLomOl8Wljy2OUM/sendMessage \
+        -d chat_id="-1001843746698" \
         -d text="$1" \
         -d "parse_mode=html" \
         -d "disable_web_page_preview=true"
 }
 
-push_message "<b>Build Chidori bot is running.</b>
+push_message "<b>Build Kernel bot is running.</b>
 <b>Date:</b> <code>$DATE</code>"
 echo -e "$blue    \nSetup build environment.\n $nocol"
 push_message "- Setup build environment."
